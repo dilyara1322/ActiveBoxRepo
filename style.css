@@ -40,7 +40,11 @@ p {
     left: 0;
     z-index: 1000;
 }
-
+.header.fixed {
+    position: fixed;
+    background: #31344e;
+    height: auto;
+}
 .header__inner {
     display: flex;
     justify-content: space-between;
@@ -48,14 +52,18 @@ p {
     padding: 35px 0; 
     border-bottom: 1px solid #505369;
 }
+.header.fixed .header__inner {
+    padding: 15px 0;
+}
 
 /* nav
 ==============*/
 .nav {
+    display: flex;
+    flex-direction: row;
     font-size: 13px;
     font: bold;
 }
-
 .nav__link {
     margin-left: 60px;
     color: #ffffff;
@@ -80,6 +88,9 @@ p {
     border: none;
     cursor: pointer;
     padding: 14px 3px;
+}
+.burger:focus {
+    outline: 0;
 }
 .burger__item {
     position: relative;
@@ -357,6 +368,57 @@ p {
     background-color: #53354a;
     overflow: hidden;
 }
+.reviews__slider {
+    position: relative;
+    height: 500px;
+}
+.slide-button {
+    height: 80px;
+    width: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    opacity: 0.1;
+
+    border-width: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.slide-button:focus {
+    outline: 0;
+}
+.slide-button:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.slide-button.prev {
+    left: 0;
+}
+.slide-button.next {
+    right: 0;
+}
+.arrow-image {
+    fill: #fff;
+}
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0; 
+    /* display: none; */
+    transition: opacity 0.3s linear;
+}
+.slide--current {
+    /* display: block; */
+    opacity: 1;
+    height: 500px;
+}
 .reviews__item {
     /* height: 500px; */
     display: flex;
@@ -485,6 +547,20 @@ p {
     /* nav */
     .nav {
         display: none;
+        width: 100%;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        text-align: right;
+        background-color: #3a3e64;
+        opacity: 0.9;
+    }
+    .nav.show {
+        display: flex;
+    }
+    .nav__link {
+        padding: 7px 15px;
     }
 
     /* burger */
@@ -512,6 +588,9 @@ p {
     }
 
     /* reviews */
+    .reviews__slider {
+        height: 1000px;
+    }
     .reviews__photo {
         width: 100%;
         padding: 15px 0;
@@ -584,6 +663,11 @@ p {
     .team__photo {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    /* reviews */
+    .reviews__slider {
+        height: 800px;
     }
 
     /* download */

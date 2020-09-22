@@ -3,9 +3,12 @@
 <head>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Open+Sans:wght@700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+   <!--  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> -->
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ActiveBox</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -48,23 +51,45 @@
 			S464.968,229.829,444.829,248.991z"/>
         </g>
     </symbol>
+    <symbol id="left-arrow" viewBox="0 0 512 512">
+        <g>
+            <path d="M221.568,255.359L394.373,82.553c18.821-18.82,18.821-49.617,0-68.438s-51.328-18.821-68.438,0L117.2,221.14
+			c-8.554,8.554-13.688,22.243-13.688,34.219c0,13.688,5.133,25.665,13.688,34.219l207.024,208.735
+			c8.555,8.555,22.242,13.688,34.219,13.688c13.688,0,25.665-5.132,34.219-13.688c18.821-18.82,18.821-49.617,0-68.438
+			L221.568,255.359z M370.419,472.648c-5.132,5.132-15.398,5.132-20.531,0L141.153,265.625c-3.422-3.422-5.133-6.844-5.133-10.266
+			c0-3.422,1.711-6.844,5.133-10.266L349.888,38.069c1.711-3.422,5.132-5.132,10.266-5.132s6.844,1.711,10.266,5.132
+			c5.132,5.132,5.132,15.398,0,20.531L183.927,243.382c-3.422,3.422-5.133,6.844-5.133,11.976c0,5.132,1.711,8.555,5.133,11.977
+			l184.782,184.782C375.553,458.961,375.553,467.516,370.419,472.648z"/>
+	    </g>
+    </symbol>
+    <symbol id="right-arrow" viewBox="0 0 512 512">
+        <g>
+            <path d="M394.8,222.851L186.065,14.116c-18.821-18.821-51.328-18.821-68.438,0c-18.82,18.821-18.82,49.617,0,68.438
+			L290.433,257.07L117.628,429.875c-18.82,18.821-18.82,49.618,0,68.438C126.183,506.868,139.87,512,151.846,512
+			c11.976,0,25.665-5.132,34.219-13.688L394.8,291.288c8.555-8.555,13.688-22.242,13.688-34.219
+			C408.488,245.093,403.355,231.406,394.8,222.851z M370.847,267.335L163.823,474.36c-5.133,5.132-15.398,5.132-20.531,0
+			c-5.133-5.132-5.133-15.399,0-20.531l184.782-184.782c6.844-6.844,6.844-17.109,0-23.953L141.581,60.312
+			c-5.133-6.844-5.133-15.399,0-20.531c3.422-3.422,6.844-5.132,10.266-5.132c3.422,0,6.844,1.71,10.266,5.132l208.735,208.735
+			c3.422,3.422,5.132,6.844,5.132,10.266C374.269,260.491,372.558,265.625,370.847,267.335z"/>
+	    </g>
+    </symbol>
 </svg>
 
 <!-- header -->
-<header class="header">
+<header class="header" id="header">
     <div class="container">
         <div class="header__inner">
             <div class="header__logo">
                 <img src="img/logo.png" alt="ActiveBox">
             </div>
-            <nav class="nav">
-                <a class="nav__link" href="#">Features</a>
-                <a class="nav__link" href="#">Works</a>
-                <a class="nav__link" href="#">Our Team</a>
-                <a class="nav__link" href="#">Testimonials</a>
-                <a class="nav__link" href="#">Download</a>
+            <nav class="nav" id="nav">
+                <a class="nav__link" href="#" data-scroll="#features">Features</a>
+                <a class="nav__link" href="#" data-scroll="#works">Works</a>
+                <a class="nav__link" href="#" data-scroll="#team">Our Team</a>
+                <a class="nav__link" href="#" data-scroll="#reviews">Testimonials</a>
+                <a class="nav__link" href="#" data-scroll="#download">Download</a>
             </nav>
-            <button class="burger" type="button">
+            <button class="burger" type="button" id="nav-toggle">
                 <span class="burger__item"></span>
             </button>
         </div>
@@ -72,7 +97,7 @@
 </header>
 
 <!-- intro -->
-<div class="intro">
+<div class="intro" id="intro">
     <div class="container">
         <div class="intro__inner">
             <h1 class="intro__title">Your Favorite One Page Multi Purpose Template</h1>
@@ -83,7 +108,7 @@
 </div>
 
 <!-- features -->
-<div class="features">
+<div class="features" id="features">
     <div class="container">
         <div class="features__inner">
             <div class="features__item">
@@ -121,7 +146,7 @@
 </div><!-- /.features -->
 
 <!-- works -->
-<div class="works">
+<div class="works" id="works">
     <div class="works__item">
         <img class="works__image" src="img/works/work-1-full.jpg" alt="">
         <div class="works__content">
@@ -181,7 +206,7 @@
 </div><!-- /.works -->
 
 <!-- team -->
-<div class="team">
+<div class="team" id="team">
     <div class="container">
         <div class="team__inner">
             <div class="team__item">
@@ -276,22 +301,46 @@
 </div><!-- /.team -->
 
 <!-- testimonials/reviews -->
-<div class="reviews">
+<div class="reviews" id="reviews">
     <div class="container">
-        <div class="reviews__item">
-            <div class="reviews__photo">
-                <img class="reviews__image" src="img/reviews/review-photo-1.jpg" alt="">
+        <div class="reviews__slider" id="reviews__slider">
+
+            <button class="slide-button prev">
+                <svg class="arrow-image"><use xlink:href="#left-arrow"></use></svg>
+            </button>
+            <button class="slide-button next">
+                <svg class="arrow-image"><use xlink:href="#right-arrow"></use></svg>
+            </button>
+
+            <div class="slide slide--current slideJS" data-index=0>
+                <div class="reviews__item">
+                    <div class="reviews__photo">
+                        <img class="reviews__image" src="img/reviews/review-photo-1.jpg" alt="">
+                    </div>
+                    <div class="reviews__content">
+                        <div class="reviews__text">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</div>
+                        <div class="reviews__author">Susan Sims, Interaction Designer at XYZ</div>
+                    </div>
+                </div>
             </div>
-            <div class="reviews__content">
-                <div class="reviews__text">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</div>
-                <div class="reviews__author">Susan Sims, Interaction Designer at XYZ</div>
+
+            <div class="slide slideJS" data-index=1>
+                <div class="reviews__item">
+                    <div class="reviews__photo">
+                        <img class="reviews__image" src="img/reviews/review-photo-1.jpg" style="opacity: 0.5;" alt="">
+                    </div>
+                    <div class="reviews__content">
+                        <div class="reviews__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit repellat obcaecati magnam itaque at impedit consequatur. Fuga possimus quibusdam, sapiente consequuntur suscipit ipsam repellat tenetur tempora corrupti, culpa veniam. Voluptas.</div>
+                        <div class="reviews__author">Susan Sims, Interaction Designer at XYZ</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div><!-- /.reviews -->
 
 <!-- download -->
-<div class="download">
+<div class="download" id="download">
     <h2 class="download__title">Are You Ready to Start? Download Now For Free!</h2>
     <h4 class="download__subtitle">Fusce dapibus, tellus ac cursus commodo</h4>
     <a class="button button--red button--long" href="#">Download Here</a>
@@ -341,6 +390,10 @@
         </div>
     </div>
 </div>
+
+<!-- scripts -->
+<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+<script src="app.js"></script>
 
 </body>
 </html>
