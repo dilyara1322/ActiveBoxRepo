@@ -41,7 +41,7 @@ $(function(){
         nav.removeClass("show");
     });
 
-    /* reviews https://kenwheeler.github.io/slick/*/
+    /* reviews */
     let slider = $("#reviews__slider");
     let slidesCount = $(".slideJS").length;
     let currentSlide = $(".slide--current");
